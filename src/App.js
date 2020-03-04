@@ -11,7 +11,7 @@ function App() {
     setToggle(!toggle)
   }
 
-  const [rotate, setRotate] = useState(0)
+  let [rotate, setRotate] = useState(0)
   
   return (
     <div className={classes.container}>
@@ -24,8 +24,8 @@ function App() {
       <div className={classes.testbox} onClick={toggleIt} style={toggle ? {backgroundColor: "rgb(161, 154, 154)", width: "200px", height: "200px"} : {backgroundColor: "rgb(224, 21, 21)", width: "150px", height: "150px"}}></div>
       <button onClick={toggleIt}>Toggle</button>
 
-      <div className={classes.testbox}  style={{transform: `rotate(${rotate}deg)`}}></div>
-      <button onMouseDown={() => setRotate(360)}>Rotate</button>
+      <div className={classes.testbox}  onMouseDown={() => setRotate(rotate + 45)} style={{transform: `rotate(${rotate}deg)`}}></div>
+      <button onMouseDown={() => setRotate(rotate + 45)}>Rotate</button>
     </div>
   );
 }
