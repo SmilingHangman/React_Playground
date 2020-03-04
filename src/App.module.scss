@@ -1,0 +1,17 @@
+.container {
+    height: 100vh;
+}
+.testbox {
+    height: 200px;
+    width: 200px;
+    background-color: rgb(161, 154, 154);
+    transition-duration: 0.3s;
+}
+
+.redbutton {
+    background-color: rgb(224, 21, 21);
+}
+
+.graybutton {
+    background-color: rgb(161, 154, 154);
+}

@@ -1,24 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import classes from './App.module.scss'
+
 
 function App() {
+  
+  const [color, setColor] = useState("rgb(161, 154, 154)")
+
+  const [toggle, setToggle] = useState(true);
+  const toggleIt = () => {
+    setToggle(!toggle)
+  }
+
+  const [rotate, setRotate] = useState(0)
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={classes.container}>
+      <div className={classes.testbox} style={{backgroundColor: color }}></div>
+      <button className={classes.redbutton} onClick={() => setColor("rgb(224, 21, 21)")}>RED</button>
+      <button className={classes.graybutton} onClick={() => setColor("rgb(161, 154, 154)")}>GRAY</button>
+
+
+      <div className={classes.testbox} onClick={toggleIt} style={toggle ? {backgroundColor: "rgb(224, 21, 21)", width: "150px", height: "150px"} : {backgroundColor: "rgb(161, 154, 154)", width: "200px", height: "200px"}}></div>
+      <div className={classes.testbox} onClick={toggleIt} style={toggle ? {backgroundColor: "rgb(161, 154, 154)", width: "200px", height: "200px"} : {backgroundColor: "rgb(224, 21, 21)", width: "150px", height: "150px"}}></div>
+      <button onClick={toggleIt}>Toggle</button>
+
+      <div className={classes.testbox}  style={{transform: `rotate(${rotate}deg)`}}></div>
+      <button onMouseDown={() => setRotate(360)}>Rotate</button>
     </div>
   );
 }
