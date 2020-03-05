@@ -36,7 +36,7 @@ function App() {
       
       <div className={classes.boxholder}>
         <div className={classes.testbox}  style={{backgroundColor: colorInput}}></div>
-        <input type="text" onInput={event => setColorInput(event.target.value)}></input>
+        <input type="text" placeholder="Type a color" onInput={event => setColorInput(event.target.value)}></input>
       </div>
     </div>
   );
