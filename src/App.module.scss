@@ -1,5 +1,12 @@
 .container {
     height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.boxholder {
+    margin: 10px;
+    min-width: 200px;
 }
 .testbox {
     height: 200px;
@@ -14,4 +21,9 @@
 
 .graybutton {
     background-color: rgb(161, 154, 154);
+}
+
+.redbutton, .graybutton {
+    height: 20px;
+    width: 40px;
 }
